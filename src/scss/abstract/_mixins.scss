@@ -1,0 +1,19 @@
+@use '../utils/variables' as *;
+
+@mixin tablet {
+    @media screen and (min-width: $tablet-break-point) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: $desktop-break-point) {
+        @content;
+    }
+}
+
+@mixin retina-display {
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+        @content;
+    }
+}
