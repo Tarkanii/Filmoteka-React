@@ -1,0 +1,172 @@
+@use '../../scss/abstract/mixins' as *;
+@use '../../scss/utils/variables' as *;
+
+.header {
+    height: 230px;
+    padding: 46px 0 0 0;
+    background-image:
+        linear-gradient(to left, var(--header-shadow-bg) 0 calc(((100% - $mobile-break-point) / 2) + $mobile-break-point - 20px),  black calc(((100% - $mobile-break-point) / 2) + $mobile-break-point)), 
+        linear-gradient(to right, var(--header-shadow-bg) 0 calc(((100% - $mobile-break-point) / 2) + $mobile-break-point - 20px),  black calc(((100% - $mobile-break-point) / 2) + $mobile-break-point)), 
+        url(../../assets/mobile/mobile-home-bg.jpg),
+        linear-gradient(var(--header-shadow-bg), var(--header-shadow-bg));
+    background-size: auto 230px;
+    background-position: center;    
+    background-repeat: no-repeat;
+
+    @include retina-display {
+        background-image: 
+            linear-gradient(to left, var(--header-shadow-bg) 0 calc(((100% - $mobile-break-point) / 2) + $mobile-break-point - 20px),  black calc(((100% - $mobile-break-point) / 2) + $mobile-break-point)), 
+            linear-gradient(to right, var(--header-shadow-bg) 0 calc(((100% - $mobile-break-point) / 2) + $mobile-break-point - 20px),  black calc(((100% - $mobile-break-point) / 2) + $mobile-break-point)), 
+            url(../../assets/mobile/mobile-home-bg@2x.jpg),
+            linear-gradient(var(--header-shadow-bg), var(--header-shadow-bg));
+    }
+
+    @include tablet {
+        padding: 41px 0 0 0;
+        background-image: 
+            linear-gradient(to left, var(--header-shadow-bg) 0 calc(((100% - $tablet-break-point) / 2) + $tablet-break-point - 20px),  black calc(((100% - $tablet-break-point) / 2) + $tablet-break-point)), 
+            linear-gradient(to right, var(--header-shadow-bg) 0 calc(((100% - $tablet-break-point) / 2) + $tablet-break-point - 20px),  black calc(((100% - $tablet-break-point) / 2) + $tablet-break-point)), 
+            url(../../assets/tablet/tablet-home-bg.jpg),
+            linear-gradient(var(--header-shadow-bg), var(--header-shadow-bg));
+
+            @include retina-display {
+                background-image: 
+                    linear-gradient(to left, var(--header-shadow-bg) 0 calc(((100% - $tablet-break-point) / 2) + $tablet-break-point - 20px),  black calc(((100% - $tablet-break-point) / 2) + $tablet-break-point)), 
+                    linear-gradient(to right, var(--header-shadow-bg) 0 calc(((100% - $tablet-break-point) / 2) + $tablet-break-point - 20px),  black calc(((100% - $tablet-break-point) / 2) + $tablet-break-point)), 
+                    url(../../assets/tablet/tablet-home-bg@2x.jpg),
+                    linear-gradient(var(--header-shadow-bg), var(--header-shadow-bg));
+            }
+    }
+
+    @include desktop {
+        background-image: 
+            linear-gradient(to left, var(--header-shadow-bg) 0 calc(((100% - $desktop-break-point) / 2) + $desktop-break-point - 20px),  black calc(((100% - $desktop-break-point) / 2) + $desktop-break-point)), 
+            linear-gradient(to right, var(--header-shadow-bg) 0 calc(((100% - $desktop-break-point) / 2) + $desktop-break-point - 20px),  black calc(((100% - $desktop-break-point) / 2) + $desktop-break-point)), 
+            url(../../assets/desktop/desktop-home-bg.jpg),
+            linear-gradient(var(--header-shadow-bg), var(--header-shadow-bg));
+
+            @include retina-display {
+                background-image: 
+                    linear-gradient(to left, var(--header-shadow-bg) 0 calc(((100% - $desktop-break-point) / 2) + $desktop-break-point - 20px),  black calc(((100% - $desktop-break-point) / 2) + $desktop-break-point)), 
+                    linear-gradient(to right, var(--header-shadow-bg) 0 calc(((100% - $desktop-break-point) / 2) + $desktop-break-point - 20px),  black calc(((100% - $desktop-break-point) / 2) + $desktop-break-point)), 
+                    url(../../assets/desktop/desktop-home-bg@2x.jpg),
+                    linear-gradient(var(--header-shadow-bg), var(--header-shadow-bg));
+            }
+    }
+
+    &.library {
+        background-image:
+            linear-gradient(to left, var(--header-shadow-bg) 0 calc(((100% - $mobile-break-point) / 2) + $mobile-break-point - 20px),  black calc(((100% - $mobile-break-point) / 2) + $mobile-break-point)), 
+            linear-gradient(to right, var(--header-shadow-bg) 0 calc(((100% - $mobile-break-point) / 2) + $mobile-break-point - 20px),  black calc(((100% - $mobile-break-point) / 2) + $mobile-break-point)), 
+            url(../../assets/mobile/mobile-library-bg.jpg),
+            linear-gradient(var(--header-shadow-bg), var(--header-shadow-bg));
+
+        @include retina-display {
+            background-image: 
+                linear-gradient(to left, var(--header-shadow-bg) 0 calc(((100% - $mobile-break-point) / 2) + $mobile-break-point - 20px),  black calc(((100% - $mobile-break-point) / 2) + $mobile-break-point)), 
+                linear-gradient(to right, var(--header-shadow-bg) 0 calc(((100% - $mobile-break-point) / 2) + $mobile-break-point - 20px),  black calc(((100% - $mobile-break-point) / 2) + $mobile-break-point)), 
+                url(../../assets/mobile/mobile-library-bg@2x.jpg),
+                linear-gradient(var(--header-shadow-bg), var(--header-shadow-bg));
+        }
+    
+        @include tablet {
+            background-image: 
+                linear-gradient(to left, var(--header-shadow-bg) 0 calc(((100% - $tablet-break-point) / 2) + $tablet-break-point - 20px),  black calc(((100% - $tablet-break-point) / 2) + $tablet-break-point)), 
+                linear-gradient(to right, var(--header-shadow-bg) 0 calc(((100% - $tablet-break-point) / 2) + $tablet-break-point - 20px),  black calc(((100% - $tablet-break-point) / 2) + $tablet-break-point)), 
+                url(../../assets/tablet/tablet-library-bg.jpg),
+                linear-gradient(var(--header-shadow-bg), var(--header-shadow-bg));
+    
+                @include retina-display {
+                    background-image: 
+                        linear-gradient(to left, var(--header-shadow-bg) 0 calc(((100% - $tablet-break-point) / 2) + $tablet-break-point - 20px),  black calc(((100% - $tablet-break-point) / 2) + $tablet-break-point)), 
+                        linear-gradient(to right, var(--header-shadow-bg) 0 calc(((100% - $tablet-break-point) / 2) + $tablet-break-point - 20px),  black calc(((100% - $tablet-break-point) / 2) + $tablet-break-point)), 
+                        url(../../assets/tablet/tablet-library-bg@2x.jpg),
+                        linear-gradient(var(--header-shadow-bg), var(--header-shadow-bg));
+                }
+        }
+    
+        @include desktop {
+            background-image: 
+                linear-gradient(to left, var(--header-shadow-bg) 0 calc(((100% - $desktop-break-point) / 2) + $desktop-break-point - 20px),  black calc(((100% - $desktop-break-point) / 2) + $desktop-break-point)), 
+                linear-gradient(to right, var(--header-shadow-bg) 0 calc(((100% - $desktop-break-point) / 2) + $desktop-break-point - 20px),  black calc(((100% - $desktop-break-point) / 2) + $desktop-break-point)), 
+                url(../../assets/desktop/desktop-library-bg.jpg),
+                linear-gradient(var(--header-shadow-bg), var(--header-shadow-bg));
+    
+                @include retina-display {
+                    background-image: 
+                        linear-gradient(to left, var(--header-shadow-bg) 0 calc(((100% - $desktop-break-point) / 2) + $desktop-break-point - 20px),  black calc(((100% - $desktop-break-point) / 2) + $desktop-break-point)), 
+                        linear-gradient(to right, var(--header-shadow-bg) 0 calc(((100% - $desktop-break-point) / 2) + $desktop-break-point - 20px),  black calc(((100% - $desktop-break-point) / 2) + $desktop-break-point)), 
+                        url(../../assets/desktop/desktop-library-bg@2x.jpg),
+                        linear-gradient(var(--header-shadow-bg), var(--header-shadow-bg));
+                }
+        }
+    }
+
+}
+
+.header__nav__container {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    &__icon {
+        height: 24px;
+        width: 24px;
+
+        @include tablet {
+            margin-right: 10px;
+        }
+    }
+
+    &__text {
+        display: none;
+
+        @include tablet {
+            display: inline;
+            color: var(--light-text-color);
+            font-size: 30px;
+            font-weight: 500;
+            line-height: 1.17;
+        }
+    }
+}
+
+.header__nav {
+    display: flex;
+
+    &__link {
+        position: relative;
+        color: var(--light-text-color);
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 1.17;
+        text-transform: uppercase;
+    }
+
+    &__link::after {
+        content: "";
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        height: 3px;
+        width: 100%;
+        visibility: hidden;
+        opacity: 0;
+        background-color: var(--accent-color);
+        transition: opacity var(--transition), visibility var(--transition);
+    }
+
+    &__link:hover::after, &__link:focus::after, &__link.active::after {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    &__link:first-child {
+        margin-right: 39px;
+    }
+}

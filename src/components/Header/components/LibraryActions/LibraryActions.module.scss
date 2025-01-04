@@ -1,0 +1,22 @@
+@use '../../../../scss/abstract/mixins' as *;
+
+.action-buttons-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 46px;
+}
+
+.action-button {
+    align-items: unset;
+    padding: 14px;
+    width: 100%;
+
+    @include tablet {
+        width: 136px;
+    }
+
+    &:first-child {
+        margin-right: 20px;
+    }
+}
