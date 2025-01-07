@@ -1,18 +1,22 @@
+import { useDispatch } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
-import HomePage from './pages/HomePage';
-import LibraryPage from './pages/LibraryPage';
-import NotFoundPage from './pages/NotFoundPage';
-import Header from './components/Header';
+import { HomePage, LibraryPage, NotFoundPage }  from './pages';
+import { Header } from './components';
+import { getGenres } from './redux/genres/thunks';
 import './App.scss';
 
-
 function App() {
+
+  const dispatch = useDispatch();
+  dispatch(getGenres());
+
   return (
     <>
       <Header />
-      <main>
+      <main className='main'>
         <Routes>
           <Route path='/'  element={<HomePage />} />
+          <Route path='/home'  element={<HomePage />} />
           <Route path='/library' element={<LibraryPage />} />
           <Route path='*' element={<NotFoundPage />} />
         </Routes>

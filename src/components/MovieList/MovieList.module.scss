@@ -1,0 +1,11 @@
+@use '../../scss/abstract/mixins' as *;
+
+.movie-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    @include tablet {
+        gap: 30px;
+    }
+}
