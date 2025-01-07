@@ -33,19 +33,19 @@ export default function Header() {
         <header className={`${styles['header']} ${page === 'library' ? styles['library'] : ''} section`}> 
             <div className="container">
                 <div className={styles['header__nav__container']}>
-                    <NavLink to="/" className={styles['logo']}>
+                    <NavLink to="/home" className={styles['logo']}>
                         <svg className={styles['logo__icon']}>
                             <use href={sprite + '#icon-logo'}></use>
                         </svg>
                         <p className={styles['logo__text']}>Filmoteka</p>
                     </NavLink>
                     <nav className={styles['header__nav']}>
-                        <NavLink className={({ isActive }) => getNavLinkClassName(isActive)(styles['active'], styles['header__nav__link'])} to="/">Home</NavLink>
+                        <NavLink className={({ isActive }) => getNavLinkClassName(isActive)(styles['active'], styles['header__nav__link'])} to="/home">Home</NavLink>
                         <NavLink className={({ isActive }) => getNavLinkClassName(isActive)(styles['active'], styles['header__nav__link'])} to="/library">My library</NavLink>
                     </nav>
                 </div>
                 <Routes>
-                    <Route path='/' element={<HomeActions />}></Route>
+                    <Route path='/home' element={<HomeActions />}></Route>
                     <Route path='/library' element={<LibraryActions />}></Route>
                 </Routes>
             </div>
