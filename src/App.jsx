@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 import { HomePage, LibraryPage, NotFoundPage }  from './pages';
-import { Header } from './components';
+import { Footer, Header } from './components';
 import { getGenres } from './redux/genres/thunks';
 import './App.scss';
 
@@ -21,6 +21,7 @@ function App() {
           <Route path='*' element={<NotFoundPage />} />
         </Routes>
       </main>
+      <Footer />
     </>
   );
 }

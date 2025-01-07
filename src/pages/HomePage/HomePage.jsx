@@ -19,7 +19,7 @@ export default function HomePage() {
         <>
         <Navigate to="/home" />
             <section className={`${styles['movies-section']} section`}>
-                <div className={`${ styles[isError ? 'error-container' : 'movies-section__container']} container`}>
+                <div className={`${ isError ? styles['error-container'] : ''} container`}>
                     {isLoading && <Loader />}
                     {isError && 
                         <>
