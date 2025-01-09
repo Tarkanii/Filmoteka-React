@@ -10,7 +10,6 @@ export default function MovieModal({ movieDetails, closeModal }) {
     const closeButtonRef = useRef(null);
     const genres = useSelector(state => state.genres.genres);
     const { poster_path, genre_ids, title, original_title, vote_average, vote_count, overview, popularity } = movieDetails;
-    console.log(movieDetails);
 
     useEffect(() => {
         closeButtonRef.current.focus();
@@ -18,7 +17,11 @@ export default function MovieModal({ movieDetails, closeModal }) {
 
     // Handling onClick event
     function handleOnClick(e) {
-        if (e.target.classList.contains(styles['modal-backdrop']) || e.target.classList.value.includes('modal__close-button')) {
+        if (
+            e.target.classList.contains(styles['modal-backdrop']) || 
+            e.target.classList.value.includes('modal__close-button') || 
+            e.target.parentNode.classList.value.includes('modal__close-button')
+        ) {
             closeModal();
         }
     }
@@ -31,6 +34,10 @@ export default function MovieModal({ movieDetails, closeModal }) {
             !e.relatedTarget.classList.contains(styles['modal__action-button'])
         ) {
             closeModal();
+        }
+
+        if (e.relatedTarget === null) {
+            closeButtonRef.current.focus();
         }
     }
 

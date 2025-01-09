@@ -5,8 +5,8 @@ class FetchService {
     apiKey = '122ff25a5fbe369b9dc701b94b06cdc8';
     initialParams = { language: 'en-US' };
 
-    getTrending(params = {...this.initialParams, page: 1}, type = 'movie', period = 'week') {
-        return fetch(this.getUrl(`trending/${type}/${period}`, {...params}))
+    getTrending(params, type = 'movie', period = 'week') {
+        return fetch(this.getUrl(`trending/${type}/${period}`, {...this.initialParams, ...params}))
             .then((res) => {
                 if (res.ok) return res.json();
    
@@ -14,8 +14,8 @@ class FetchService {
             })
     }
 
-    getGenres(type = 'movie', params = {...this.initialParams}) {
-        return fetch(this.getUrl(`genre/${type}/list`, {...params}))
+    getGenres(type = 'movie') {
+        return fetch(this.getUrl(`genre/${type}/list`, {...this.initialParams}))
             .then((res) => {
                 if (res.ok) return res.json();
 

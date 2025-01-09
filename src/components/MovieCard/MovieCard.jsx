@@ -35,7 +35,7 @@ export default function MovieCard({ movieDetails, type = 'home' }) {
     return (
         <>
             <li className={styles['movie-card']}>
-                <a href="#" onClick={handleOnClick} ref={movieCardLinkRef}>
+                <a className={styles['movie-card__link']} href="#" onClick={handleOnClick} ref={movieCardLinkRef}>
                     <div className={styles['movie-card__img-container']}>
                         <img src={fetchService.imgUrl + poster_path} alt={title} />
                     </div>
