@@ -23,6 +23,6 @@ export default function Loader() {
                 <div className={styles['block']}></div>
             </div>
         </div>,
-        document.getElementById('portal')
+        document.getElementById('loader')
     );
 }
