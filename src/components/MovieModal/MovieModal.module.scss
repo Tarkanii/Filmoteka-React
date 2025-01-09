@@ -11,21 +11,24 @@
     animation: backdrop 200ms;
 }
 
+.modal-container {
+    height: fit-content;
+}
+
 .modal {
     position: relative;
     display: flex;
     flex-direction: column;
-    max-height: 80vh;
+    max-height: 95vh;
     padding: 48px 20px 41px;
     background-color: var(--modal-bg);
     border-radius: 5px;
+    overflow-y: auto;
     animation: modal 200ms;
-    overflow: auto;
 
     @include tablet {
         flex-direction: row;
         padding: 42px 30px 40px;
-
     }
 
     @include desktop {

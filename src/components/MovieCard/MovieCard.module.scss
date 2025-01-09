@@ -15,8 +15,12 @@
         width: calc((100% - 2 * 30px) / 3);
     }
 
-    &:hover {
+    &:hover, &:has( > .movie-card__link:focus) {
         transform: scale(1.01);
+    }
+
+    &__link:focus {
+        outline: none;
     }
 
     &__img-container {
