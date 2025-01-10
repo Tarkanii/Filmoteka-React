@@ -26,7 +26,7 @@ export default function Pagination() {
     function getMobilePaginationButtons() {
         const numbers = [];
         if (totalPages <= 5 || currentPage - 1 < 2) {
-            for (let i = 1; i <= 5; i++) {
+            for (let i = 1; i <= totalPages; i++) {
                 numbers.push(i);
             }
         }
@@ -63,7 +63,7 @@ export default function Pagination() {
         let numbers = [];
 
         if (totalPages <= 7) {
-            for (let i = 1; i <= 7; i++) {
+            for (let i = 1; i <= totalPages; i++) {
                 numbers.push(i);
             }
         }

@@ -1,7 +1,7 @@
-import { useEffect, useMemo } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useSearchParams, useLocation } from "react-router-dom";
-import { getTrendingMovies } from "../../redux/movies/thunks";
+import { useSearchParams } from "react-router-dom";
+import { getMoviesBySearch, getTrendingMovies } from "../../redux/movies/thunks";
 import { MovieList, Loader, Button} from "../../components";
 import styles from './HomePage.module.scss';
 
@@ -12,23 +12,23 @@ export default function HomePage() {
     const dispatch = useDispatch();
 
     const [searchParams] = useSearchParams();
-    const navigate = useNavigate();
-    const location = useLocation();
-    const params = useMemo(() => Object.fromEntries([...searchParams]), [searchParams]);
 
     useEffect(() => {
-        // Redirecting to home route 
-        if (location.pathname === '/') {
-            navigate(`/home${params?.page ? '?page=' + params.page : ''}${params.search ? '&search=' + params.search : ''}`);
+        // Getting trending movies ones on the right path
+        if (searchParams.get('search')) {
+            dispatch(getMoviesBySearch({ search: searchParams.get('search'), page: searchParams.get('page') || 1 }))
         } else {
-            // Getting trending movies ones on the right path
-            dispatch(getTrendingMovies({ page: Number(params?.page) || 1 }));
+            dispatch(getTrendingMovies({ page: searchParams.get('page') || 1 }));
         }
-    }, [dispatch, location.pathname, navigate, params.page, params.search])
+    }, [dispatch, searchParams])
     
     // Getting movies on try again button click
     function tryAgain() {
-        dispatch(getTrendingMovies({ page: Number(params?.page) || 1 }));
+        if (searchParams.get('search')) {
+            dispatch(getMoviesBySearch({ search: searchParams.get('search'), page: searchParams.get('page') || 1 }))
+        } else {
+            dispatch(getTrendingMovies({ page: searchParams.get('page') || 1 }));
+        }
     }
 
     return (

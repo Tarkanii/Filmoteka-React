@@ -58,8 +58,6 @@
         color: var(--error-text-color);
         font-size: 14px;
         line-height: 1.17;
-        opacity: 0;
-        visibility: hidden;
 
         @include tablet {
             width: 100%;

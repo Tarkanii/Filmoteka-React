@@ -13,3 +13,16 @@ export const getTrendingMovies = createAsyncThunk(
         
     }
 )
+
+export const getMoviesBySearch = createAsyncThunk(
+    'movies/getMoviesBySearch',
+    async ({ search, page }, { rejectWithValue }) => {
+        try {
+            const movies = await fetchService.getSearch(search, page);
+            return movies;
+        } catch (error) {
+            return rejectWithValue(error.message);
+        }
+        
+    }
+)
