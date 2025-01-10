@@ -18,7 +18,8 @@ export default function MovieModal({ movieDetails, closeModal }) {
     // Handling onClick event
     function handleOnClick(e) {
         if (
-            e.target.classList.contains(styles['modal-backdrop']) || 
+            e.target.classList.contains(styles['modal-backdrop']) ||
+            e.target.parentNode.classList.contains(styles['modal-backdrop']) ||
             e.target.classList.value.includes('modal__close-button') || 
             e.target.parentNode.classList.value.includes('modal__close-button')
         ) {

@@ -14,6 +14,15 @@ class FetchService {
             })
     }
 
+    getSearch(search, page = 1, type = 'movie') {
+        return fetch(this.getUrl(`search/${type}`, {...this.initialParams, query: search, page}))
+            .then((res) => {
+                if (res.ok) return res.json();
+   
+                throw Error();
+            })
+    }
+
     getGenres(type = 'movie') {
         return fetch(this.getUrl(`genre/${type}/list`, {...this.initialParams}))
             .then((res) => {

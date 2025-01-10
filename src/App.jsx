@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 import { HomePage, LibraryPage, NotFoundPage }  from './pages';
-import { Footer, Header } from './components';
+import { Footer, Header, RedirectToHome } from './components';
 import { getGenres } from './redux/genres/thunks';
 import './App.scss';
 
@@ -15,7 +15,7 @@ function App() {
       <Header />
       <main className='main'>
         <Routes>
-          <Route path='/'  element={<HomePage />} />
+          <Route path='/'  element={<RedirectToHome />} />
           <Route path='/home'  element={<HomePage />} />
           <Route path='/library' element={<LibraryPage />} />
           <Route path='*' element={<NotFoundPage />} />
