@@ -13,9 +13,9 @@ export default function Header() {
 
     // Setting current page
     useEffect(() => {
-        if (location?.pathname === '/') {
+        if (location?.pathname.includes('/home')) {
             setPage('home');
-        } else if (location?.pathname === '/library') {
+        } else if (location?.pathname.includes('/library')) {
             setPage('library');
         } else {
             setPage('*');
@@ -45,8 +45,10 @@ export default function Header() {
                     </nav>
                 </div>
                 <Routes>
-                    <Route path='/home' element={<HomeActions />}></Route>
-                    <Route path='/library' element={<LibraryActions />}></Route>
+                    <Route path='/home' element={<HomeActions />} />
+                    <Route path='/library/watched' element={<LibraryActions />} />
+                    <Route path='/library/queue' element={<LibraryActions />} />
+                    <Route path='*' element={<></>} />
                 </Routes>
             </div>
         </header>

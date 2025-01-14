@@ -8,24 +8,16 @@
     line-height: 1.33;
     text-transform: uppercase;
     height: 44px;
+    padding: 0 10px;
     background: none;
     border-radius: 5px;
     border: 1px solid var(--primary-text-color);
     transition: color var(--transition), background-color var(--transition), border var(--transition);
 
-    &.button--header {
-        color: var(--light-text-color);
-        border: 1px solid var(--light-text-color);
-    }
-
     &:hover, &:focus, &.selected {
         color: var(--light-text-color);
         background-color: var(--accent-color);
         border: 1px solid var(--accent-color);
-    }
-
-    &.button--header:hover, &.button--header:focus, &.button--header.selected {
-        box-shadow: 0 8px 43px var(--button-shadow-color);
     }
 }
 

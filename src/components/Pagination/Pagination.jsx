@@ -25,13 +25,20 @@ export default function Pagination() {
     // Getting array with buttons for mobile pagination
     function getMobilePaginationButtons() {
         const numbers = [];
-        if (totalPages <= 5 || currentPage - 1 < 2) {
+        if (totalPages <= 5) {
             for (let i = 1; i <= totalPages; i++) {
                 numbers.push(i);
             }
         }
 
         if (totalPages > 5) {
+
+            if (currentPage - 1 < 2) {
+                for (let i = 1; i <= 5; i++) {
+                    numbers.push(i);
+                }
+            }
+
             if (currentPage - 1 >= 2 && currentPage + 2 <= totalPages) {
                 for (let i = currentPage - 2; i <= currentPage + 2; i++) {
                     numbers.push(i);
