@@ -14,6 +14,10 @@ export default function HomePage() {
     const [searchParams] = useSearchParams();
 
     useEffect(() => {
+        document.title = 'Home';
+    }, [])
+
+    useEffect(() => {
         // Getting trending movies ones on the right path
         if (searchParams.get('search')) {
             dispatch(getMoviesBySearch({ search: searchParams.get('search'), page: searchParams.get('page') || 1 }))

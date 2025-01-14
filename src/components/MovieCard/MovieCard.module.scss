@@ -65,7 +65,7 @@
 
     &__vote {
         display: flex;
-        align-items: center;
+        align-items: flex-end;
         justify-content: center;
         color: var(--light-text-color);
         line-height: 1.17;
