@@ -10,7 +10,7 @@ export default function Footer() {
                 <svg className={styles['footer__copyright-icon']}>
                     <use href={sprite + '#icon-love'}></use>
                 </svg> 
-                <a className={styles['footer__copyright-link']} href="https://github.com/Tarkanii" target='_blank'>by GoIT Student</a>
+                <a className={styles['footer__copyright-link']} href="https://github.com/Tarkanii" target='_blank' rel='noreferrer'>by GoIT Student</a>
             </p>
         </footer>
     )
