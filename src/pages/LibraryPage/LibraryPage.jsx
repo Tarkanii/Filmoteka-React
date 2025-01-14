@@ -13,6 +13,10 @@ export default function LibraryPage({ type = 'watched'}) {
     const dispatch = useDispatch();
 
     useEffect(() => {
+        document.title = 'Library';
+    }, [])
+
+    useEffect(() => {
         if (type === 'queue') {
             dispatch(getLibraryMovies({ movieIds: queue }));
         } else if (type === 'watched') {

@@ -183,7 +183,7 @@
 
     &__value .vote-count {
         display: flex;
-        align-items: center;
+        align-items: flex-end;
         justify-content: center;
         color: var(--primary-text-color);
         height: 16px;
@@ -195,7 +195,7 @@
 
     &__value .vote-average {
         display: flex;
-        align-items: center;
+        align-items: flex-end;
         justify-content: center;
         color: var(--light-text-color);
         height: 16px;
