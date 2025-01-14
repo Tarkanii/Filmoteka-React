@@ -33,7 +33,7 @@ export default function HomePage() {
 
     return (
         <section className={`${styles['movies-section']} section`}>
-            <div className={`${ isError ? styles['error-container'] : ''} container`}>
+            <div className={`${isError ? styles['error-container'] : ''} container`}>
                 {isLoading && <Loader />}
                 {isError && 
                     <>

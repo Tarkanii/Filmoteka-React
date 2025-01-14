@@ -33,6 +33,19 @@
         margin-bottom: 10px;
     }
 
+    &__img-container.substitute {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--image-substitute-bg);
+    }
+
+    &__poster-substitute__icon {
+        height: 75px;
+        width: 75px;
+        fill: var(--light-text-color);
+    }
+
     &__title {
         color: var(--primary-text-color);
         line-height: 1.17;

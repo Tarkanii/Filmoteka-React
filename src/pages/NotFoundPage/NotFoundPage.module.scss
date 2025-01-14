@@ -1,0 +1,18 @@
+@use '../../scss/abstract/mixins' as *;
+
+.message-container {
+    display: flex;
+    justify-content: center;
+    padding: 60px 0;
+}
+
+.message {
+    color: var(--secondary-text-color);
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+
+    @include tablet {
+        font-size: 20px;
+    }
+}
