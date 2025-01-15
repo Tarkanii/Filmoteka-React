@@ -12,46 +12,62 @@
 }
 
 .modal-container {
+    position: relative;
     height: fit-content;
 }
 
 .modal {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    max-height: 95vh;
-    padding: 48px 20px 41px;
     background-color: var(--modal-bg);
     border-radius: 5px;
-    overflow-y: auto;
     animation: modal 200ms;
 
-    @include tablet {
-        flex-direction: row;
-        padding: 42px 30px 40px;
-    }
-
-    @include desktop {
-        padding: 50px 30px 40px;
-    }
-
-    &__poster {
-        flex-shrink: 0;
-        height: auto;
-        width: 100%;
-        margin-bottom: 30.5px;
-        border-radius: 5px;
+    &__content-wrapper {
+        max-height: 90vh;
+        display: flex;
+        flex-direction: column;
+        padding: 48px 20px 41px;
+        overflow-y: auto;
 
         @include tablet {
-            height: fit-content;
+            flex-direction: row;
+            padding: 42px 30px 40px;
+            overflow-y: unset;
+        }
+    
+        @include desktop {
+            padding: 50px 30px 40px;
+        }
+    }
+
+    &__poster-container {
+        margin-bottom: 30.5px;
+
+        @include tablet {
+            display: flex;
+            justify-content: center;
+            flex-shrink: 0;
             width: 264px;
             margin-bottom: 0;
             margin-right: 32px;
+            overflow-y: hidden;
         }
 
         @include desktop {
             width: 396px;
             margin-right: 30px;
+        }
+    }
+
+    &__poster {
+        height: 100%;
+        max-width: 100%;
+        border-radius: 5px;
+
+        @include tablet {
+            height: fit-content;
+            max-height: 100%;
+            width: auto;
         }
     }
 
@@ -96,7 +112,8 @@
     right: 10px;
     height: 30px;
     width: 30px;
-    background: none;
+    background: var(--modal-bg);
+    border-radius: 50%;
 
     &__icon {
         height: 30px;
@@ -117,6 +134,11 @@
     font-size: 12px;
     font-weight: 500;
     width: 100%;
+
+    @include tablet {
+        max-height: 100%;
+        overflow-y: auto;
+    }
 
     &__title {
         font-size: 20px;

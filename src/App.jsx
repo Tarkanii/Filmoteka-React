@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 import { HomePage, LibraryPage, NotFoundPage }  from './pages';
-import { Footer, Header, Redirect } from './components';
+import { Footer, Header, MovieModal, Redirect } from './components';
 import { getGenres } from './redux/genres/thunks';
 import { setMovies } from './redux/library/slice';
 import './App.scss';
@@ -28,6 +28,7 @@ function App() {
         </Routes>
       </main>
       <Footer />
+      <MovieModal />
     </>
   );
 }
